@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MySPA - Empleados</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Página dedicada para la gestión de empleados de la empresa MySPA">
+        <meta name="keywords" content="spa, MySPA, empresa, relajacion, empleados y gestión">
+        <meta name="author" content="Equipo TetraNet">
+        <link href="./style/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="./style/font_awesome_5_15_3/css/all.css" rel="stylesheet" type="text/css">
+        <link href="./style/sweetalert2/sweetalert2.css" rel="stylesheet" type="text/css">
+        <link href="./style/estilosGestiones.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" type="image/png" href="./img/icono.png">
+    </head>
+    <body onload="cargarUsuarioGestion(); actualizarListadoEmpleados();">
+        <div class="container-fluid">
+            <div class="col-12 fondo_header header_footer d-flex justify-content-between align-items-center text-center">
+                <header class="row col-12 container-fluid">
+                    <div class="col-2 d-flex justify-content-around align-items-center">
+                        <div class="col-12 d-flex justify-content-around align-items-center">
+                            <img src="./img/logo.png" id="logo" class="img-fluid icono" alt="Logotipo My SPA">
+                        </div>
+                    </div>
+                    <div class="col-8 d-flex justify-content-center align-items-center">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="navbar-nav header_footer">
+                                <div class="row d-flex justify-content-around">
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./index.html">Inicio</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./sucursales.html">Sucursales</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./filosofia.html">Filosofía</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-2 mt-1">
+                        <button type="button" class="row rounded d-flex justify-content-between align-items-center" id="btnPerfil" onclick="mostrarPerfil();">
+                            <div class="col d-flex justify-content-center align-items-center text-center">
+                                <img src="./img/perfil.svg" id="imgPerfil" alt="Iniciar sesión" class="icono perfil">
+                            </div>
+                            <div class="col d-flex justify-content-between align-items-center text-center">
+                                <p class="text-center" id="nombreUsuario"></p>
+                            </div>
+                        </button>
+                    </div>
+                </header>
+            </div>
+            <div class="col-12" id="campo_gestiones">
+                <section class="row d-flex justify-content-center">
+                    <div class="col-8 d-flex justify-content-center align-items-center titulo_gestiones">
+                        <h1>Empleados</h1>
+                    </div>
+                    <div class="col-8 d-flex justify-content-center align-items-center">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container navbar-nav d-flex justify-content-center align-items-center fondo_nav_gestion div_nav_gestion">
+                                <div class="row d-flex div_nav_gestion_hipervinculos">
+                                    <div class="col activado_gestion">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./empleados.html">Empleados</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./clientes.html">Clientes</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./salas.html">Salas</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./productos.html">Productos</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./sucursales_gestion.html">Sucursales</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./tratamientos.html">Tratamientos</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./horarios.html">Horarios</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./servicios.html">Servicios</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo_gestion" href="./reservaciones.html">Reservaciones</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <form class="col-7">
+                                <div class="div_buscar d-flex p-1 justify-content-between container">
+                                    <div class="col-3 px-2 d-flex align-items-center justify-content-center contenedorSelectorBuscarPor">
+                                        <select class="form-select-sm" name="selcTipoDeBusqueda" id="selcTipoDeBusqueda" onchange="habilitarCampoBusqueda(); limpiarFormularioBuscar();">
+                                            <option value="" selected disabled>Buscar por...</option>
+                                            <option value="id">ID</option>
+                                            <option value="numeroU">Número único</option>
+                                            <option value="nombre">Nombre</option>
+                                            <option value="apellidoP">Apellido paterno</option>
+                                            <option value="apellidoM">Apellido materno</option>
+                                            <option value="genero">Género</option>
+                                            <option value="puesto">Puesto</option>
+                                            <option value="telefono">Teléfono</option>
+                                            <option value="rfc">RFC</option>
+                                            <option value="domicilio">Domicilio</option>
+                                            <option value="usuario">Usuario</option>
+                                            <option value="rol">Rol</option>
+                                            <option value="estatus">Estatus</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionIdBusqueda">
+                                        <input class="col-12" type="number" name="txtBusquedaId" id="txtBusquedaId" placeholder="Escribe un ID..."  min="0" step="1" onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionNumeroUBusqueda">
+                                        <input class="col-12" type="text" name="txtNumeroUBusqueda" id="txtNumeroUBusqueda" placeholder="Número único de empleado..." onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionNombreBusqueda">
+                                        <input class="col-12" type="text" name="txtNombreBusqueda" id="txtNombreBusqueda" placeholder="Nombre del empleado..." onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionApellidoPBusqueda">
+                                        <input class="col-12" type="text" name="txtApellidoPBusqueda" id="txtApellidoPBusqueda" placeholder="Apellido paterno del empleado..." onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionApellidoMBusqueda">
+                                        <input class="col-12" type="text" name="txtApellidoMBusqueda" id="txtApellidoMBusqueda" placeholder="Apellido materno del empleado..." onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionGeneroBusqueda">
+                                        <select style="max-width: 70%;" name="txtGeneroBusqueda" id="txtGeneroBusqueda" class="form-select form-select-sm" aria-label=".form-select" onchange="habilitarBotonBusqueda();">
+                                            <option value="">Indica el género</option>
+                                            <option value="O">Prefiero no decir</option>
+                                            <option value="M">Hombre</option>
+                                            <option value="F">Mujer</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionPuestoBusqueda">
+                                        <input class="col-12" type="text" name="txtPuestoBusqueda" id="txtPuestoBusqueda" placeholder="Puesto del empleado" onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionTelefonoBusqueda">
+                                        <input class="col-12" type="number" name="txtTelefonoBusqueda" id="txtTelefonoBusqueda" placeholder="Teléfono del empleado..." maxlength="10" onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionRfcBusqueda">
+                                        <input class="col-12" type="text" name="txtRfcBusqueda" id="txtRfcBusqueda" placeholder="RFC del empleado..." onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionDomicilioBusqueda">
+                                        <input class="col-12" type="text" name="txtDomicilioBusqueda" id="txtDomicilioBusqueda" placeholder="Domicilio del domicilio..." onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionUsuarioBusqueda">
+                                        <input class="col-12" type="text" name="txtUsuarioBusqueda" id="txtUsuarioBusqueda" placeholder="Nombre de usuario del empleado..." onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionRolBusqueda">
+                                        <input class="col-12" type="text" name="txtRolBusqueda" id="txtRolBusqueda" placeholder="Rol del usuario..." onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionEstatusBusqueda">
+                                        <div class="col-4">
+                                            Activo <input type="radio" id="txtBusquedaEstatus1" name="txtBusquedaEstatus" value=1 onclick="habilitarBotonBusqueda();"> 
+                                        </div>
+                                        <div class="col-4">
+                                            Inactivo <input type="radio" id="txtBusquedaEstatus2" name="txtBusquedaEstatus" value=2 onclick="habilitarBotonBusqueda();">
+                                        </div>
+                                    </div>
+                                    <button id="btnBuscar" type="button" class="col-1 d-flex align-items-center justify-content-end" onclick="validar(); mostrarBusqueda(); resultadoBusquedaEmpleado();" disabled>
+                                        <img src="./img/buscar.svg" alt="Buscar" class="icono col-2 img-fluid">
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="col-1 div_agregar d-flex align-items-center rounded">
+                                <button onclick="cargarModuloAgregarEmpleado();">
+                                    <img src="./img/agregar.svg" alt="Agregar nueva reservación" class="icono img-fluid">
+                                </button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 table-responsive contenedor_tabla_gestiones" id="datosTablaBusquedaEmpleados" style="display: none;">
+                                    <div class="row d-flex align-items-center justify-content-between col-10 my-1 mb-4">
+                                        <div class="col-10 d-flex justify-content-center">
+                                            <h4 class="text-center">Resultados de búsqueda:</h4>
+                                        </div>
+                                        <div class="col-1 d-flex align-items-center rounded contenedor_ocultarBusqueda" id="btnOcultarBusqueda">
+                                            <button type="button" onclick="ocultarBusqueda(); limpiarFormularioBuscar();">
+                                                <img src="img/tacha.svg" alt="Cancelar" class="icono img-fluid">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <table class="col-12">
+                                            <thead>
+                                                    <tr class="titulo_tabla">
+                                                        <td>
+                                                            Clave
+                                                        </td>
+                                                        <td>
+                                                            Número único
+                                                        </td>
+                                                        <td>
+                                                            Nombre
+                                                        </td>
+                                                        <td>
+                                                            Apellido pat.
+                                                        </td>
+                                                        <td>
+                                                            Apellido mat.
+                                                        </td>
+                                                        <td>
+                                                            Puesto
+                                                        </td>
+                                                        <td>
+                                                            Teléfono
+                                                        </td>
+                                                        <td>
+                                                            Estatus
+                                                        </td>
+                                                        <td>
+                                                            Elim.
+                                                        </td>
+                                                        <td>
+                                                            Edit.
+                                                        </td>
+                                                    </tr>
+                                            </thead>
+                                            <tbody id="datosBusquedaTablaEmpleados">
+                                            </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-12 table-responsive contenedor_tabla_gestiones" id="tablaEmpleados">
+                                    <table class="col-12">
+                                        <thead>
+                                            <tr class="titulo_tabla">
+                                                <td>
+                                                    Clave
+                                                </td>
+                                                <td>
+                                                    Número único
+                                                </td>
+                                                <td>
+                                                    Nombre
+                                                </td>
+                                                <td>
+                                                    Apellido pat.
+                                                </td>
+                                                <td>
+                                                    Apellido mat.
+                                                </td>
+                                                <td>
+                                                    Puesto
+                                                </td>
+                                                <td>
+                                                    Teléfono
+                                                </td>
+                                                <td>
+                                                    Estatus
+                                                </td>
+                                                <td>
+                                                    Elim.
+                                                </td>
+                                                <td>
+                                                    Edit.
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="datosTablaEmpleados">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <section class="col-md-12" id="seccionGestionarEmpleado" style="display: none;">
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <br>
+            </div>
+            <div class="col-12 fondo_footer header_footer">
+                <footer class="row text-center align-items-center">
+                    <p>Los Aldama #560, León, Gto.</p>
+                    <p>477 123 12 12</p>
+                    <p>Todos los derechos reservados My SPA © 2021</p>
+                </footer>
+            </div>
+        </div>
+        <script src="./js/jquery/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script src="./style/bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
+        <script src="./style/font_awesome_5_15_3/js/all.js" type="text/javascript"></script>
+        <script src="./style/sweetalert2/sweetalert2.js" type="text/javascript"></script>
+        <script src="./js/empleados.js" type="text/javascript"></script>
+        <script src="./js/usuarios.js" type="text/javascript"></script>
+    </body>
+</html>

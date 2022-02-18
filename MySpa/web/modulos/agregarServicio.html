@@ -1,0 +1,51 @@
+<div class="col-12" id="ventanaEmergente">
+    <div class="text-center titulo_agregar">
+        <h2>Agregar servicio</h2>
+    </div>
+    <div class="col-12">
+        <form id="agregarProductoServicio">
+            <div class="my-4 px-3">
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtCodigoServicio">ID:</label>
+                    <input type="number" id="txtCodigoServicio" name="txtCodigoServicio" placeholder="Código del servicio" readonly required style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtFechaServicio">Fecha:</label>
+                    <input type="date" id="txtFechaServicio" name="txtFechaServicio" autofocus required onclick="validarFecha();">
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtHoraServicio">Hora:</label>
+                    <select id="txtHoraServicio" name="txtHoraServicio" class="form-select form-select-sm" required>
+                        <option value="" selected>Elige el horario</option>
+                        <option value="08:00:00-10:00:00">08:00:00-10:00:00</option>
+                        <option value="10:00:00-12:00:00">10:00:00-12:00:00</option>
+                        <option value="12:00:00-14:00:00">12:00:00-14:00:00</option>
+                        <option value="14:00:00-16:00:00">14:00:00-16:00:00</option>
+                        <option value="16:00:00-18:00:00">16:00:00-18:00:00</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtReservacionServicio">Reservación:</label>
+                    <input type="number" id="txtReservacionServicio" name="txtReservacionServicio" placeholder="Reservación del servicio" required>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtTratamientoServicio">Tratamiento:</label>
+                    <input type="text" id="txtTratamientoServicio" name="txtTratamientoServicio" placeholder="Tratamiento del servicio" required>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtEmpleadoServicio">Empleado:</label>
+                    <input type="text" id="txtEmpleadoServicio" name="txtEmpleadoServicio" placeholder="Nombre del empleado que hace el servicio" required>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-sm" id="boton_aceptar" onclick="guardarServicio();">
+                    <img src="img/paloma.svg" alt="Agregar" class="icono img-fluid">
+                </button>
+                <button type="button" class="btn btn-sm" id="boton_cancelar" onclick="regresar();">
+                    <img src="img/tacha.svg" alt="Cancelar" class="icono img-fluid">
+                </button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>

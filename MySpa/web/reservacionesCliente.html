@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MySPA - Reservaciones</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Página dedicada para la gestión de reservaciones de parte de los clientes de la empresa MySPA">
+        <meta name="keywords" content="spa, MySPA, empresa, relajación, reservaciones, clientes y gestión">
+        <meta name="author" content="Equipo TetraNet">
+        <link href="./style/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="./style/font_awesome_5_15_3/css/all.css" rel="stylesheet" type="text/css">
+        <link href="./style/sweetalert2/sweetalert2.css" rel="stylesheet" type="text/css">
+        <link href="./style/estilosGestiones.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" type="image/png" href="./img/icono.png">
+    </head>
+    <body onload="cargarUsuarioGestion(); actualizarListadoReservaciones();">
+        <div class="container-fluid">
+            <div class="col-12 fondo_header header_footer d-flex justify-content-between align-items-center text-center">
+                <header class="row col-12 container-fluid">
+                    <div class="col-2 d-flex justify-content-around align-items-center">
+                        <div class="col-12 d-flex justify-content-around align-items-center">
+                            <img src="./img/logo.png" id="logo" class="img-fluid icono" alt="Logotipo My SPA">
+                        </div>
+                    </div>
+                    <div class="col-8 d-flex justify-content-center align-items-center">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="navbar-nav header_footer">
+                                <div class="row d-flex justify-content-around">
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./index.html">Inicio</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./sucursales.html">Sucursales</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./filosofia.html">Filosofía</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-2 mt-1">
+                        <button type="button" class="row rounded d-flex justify-content-between align-items-center" id="btnPerfil" onclick="mostrarPerfil();">
+                            <div class="col d-flex justify-content-center align-items-center text-center">
+                                <img src="./img/perfil.svg" id="imgPerfil" alt="Iniciar sesión" class="icono perfil">
+                            </div>
+                            <div class="col d-flex justify-content-between align-items-center text-center">
+                                <p class="text-center" id="nombreUsuario"></p>
+                            </div>
+                        </button>
+                    </div>
+                </header>
+            </div>
+            <div class="col-12" id="campo_gestiones">
+                <section class="row d-flex justify-content-center">
+                    <div class="col-8 d-flex justify-content-center align-items-center titulo_gestiones">
+                        <h1>Reservaciones</h1>
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <form class="col-7">
+                                <div class="div_buscar d-flex p-1 justify-content-between container">
+                                    <div class="col-3 px-2 d-flex align-items-center justify-content-center contenedorSelectorBuscarPor">
+                                        <select class="form-select-sm" name="selcTipoDeBusqueda" id="selcTipoDeBusqueda" onchange="habilitarCampoBusqueda(); limpiarFormularioBuscar();">
+                                            <option value="" selected disabled>Buscar por...</option>
+                                            <option value="id">ID</option>
+                                            <option value="tratamiento">Tratamiento</option>
+                                            <option value="empleado">Empleado</option>
+                                            <option value="sucursal">Sucursal</option>
+                                            <option value="sala">Sala</option>
+                                            <option value="horario">Horario</option>
+                                            <option value="fecha">Fecha</option>
+                                            <option value="estatus">Estatus</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionIdBusqueda">
+                                        <input class="col-12" type="number" name="txtBusquedaId" id="txtBusquedaId" placeholder="Escribe un ID..."  required min="0" pattern="^[0-9]+" step="1" onkeypress="validarPositivo();" onkeyup="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionClienteBusqueda">
+                                        <select style="max-width: 70%;" name="txtClienteBusqueda" id="txtClienteBusqueda" class="form-select form-select-sm" aria-label=".form-select" required onchange="habilitarBotonBusqueda();">
+                                            <option value="">Selecciona un cliente</option>
+                                            <option value="Sonia" onkeyup="habilitarBotonBusqueda();">Sonia</option>
+                                            <option value="Marisol" onkeyup="habilitarBotonBusqueda();">Marisol</option>
+                                            <option value="Yolanda" onkeyup="habilitarBotonBusqueda();">Yolanda</option>
+                                            <option value="Jazmin" onkeyup="habilitarBotonBusqueda();">Jazmín</option>
+                                            <option value="Jennifer Margarita" onkeyup="habilitarBotonBusqueda();">Jennifer Margarita</option>
+                                            <option value="Betzabeth Guadalupe" onkeyup="habilitarBotonBusqueda();">Betzabeth Guadalupe</option>
+                                            <option value="Fatima Manuela" onkeyup="habilitarBotonBusqueda();">Fatima Manuela</option>
+                                            <option value="Ashley Guadalupe" onkeyup="habilitarBotonBusqueda();">Ashley Guadalupe</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionTratamientoBusqueda">
+                                        <select style="max-width: 70%;" name="txtTratamientoBusqueda" id="txtTratamientoBusqueda" class="form-select form-select-sm" aria-label=".form-select" required onchange="habilitarBotonBusqueda();">
+                                            <option value="">Selecciona un tratamiento</option>
+                                            <option value="Aromaterapia" onkeyup="habilitarBotonBusqueda();">Aromaterapia</option>
+                                            <option value="Batido natural" onkeyup="habilitarBotonBusqueda();">Batido natural</option>
+                                            <option value="Ducha de sensaciones" onkeyup="habilitarBotonBusqueda();">Ducha de sensaciones</option>
+                                            <option value="Exfoliacion corporal" onkeyup="habilitarBotonBusqueda();">Exfoliación corporal</option>
+                                            <option value="Exfoliacion facial" onkeyup="habilitarBotonBusqueda();">Exfoliación facial</option>
+                                            <option value="Hidromasaje" onkeyup="habilitarBotonBusqueda();">Hidromasaje</option>
+                                            <option value="Masaje hawaiano" onkeyup="habilitarBotonBusqueda();">Masaje hawaiano</option>
+                                            <option value="Masaje con escencias naturales" onkeyup="habilitarBotonBusqueda();">Masaje con escencias naturales</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionEmpleadoBusqueda">
+                                        <select style="max-width: 70%;" name="txtEmpleadoBusqueda" id="txtEmpleadoBusqueda" class="form-select form-select-sm" aria-label=".form-select" required onchange="habilitarBotonBusqueda();">
+                                            <option value="">Selecciona un empleado</option>
+                                            <option value="Diana Guadalupe" onkeyup="habilitarBotonBusqueda();">Diana Guadalupe</option>
+                                            <option value="Denisse" onkeyup="habilitarBotonBusqueda();">Denisse</option>
+                                            <option value="Margarita de Jesus" onkeyup="habilitarBotonBusqueda();">Margarita de Jesús</option>
+                                            <option value="Juan Diego" onkeyup="habilitarBotonBusqueda();">Juan Diego</option>
+                                            <option value="Ana Fernanda" onkeyup="habilitarBotonBusqueda();">Ana Fernanda</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionSucursalBusqueda">
+                                        <select style="max-width: 70%;" name="txtSucursalBusqueda" id="txtSucursalBusqueda" class="form-select form-select-sm" aria-label=".form-select" required onchange="habilitarBotonBusqueda();">
+                                            <option value="">Selecciona una sucursal</option>
+                                            <option value="León Abastos 811" onkeyup="habilitarBotonBusqueda();">León Abastos 811</option>
+                                            <option value="León Boulevard Hidalgo 4009" onkeyup="habilitarBotonBusqueda();">León Boulevard Hidalgo 4009</option>
+                                            <option value="León Centro Max" onkeyup="habilitarBotonBusqueda();">León Centro Max</option>
+                                            <option value="León del moral 658" onkeyup="habilitarBotonBusqueda();">León del moral 658</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionSalaBusqueda">
+                                        <select style="max-width: 70%;" name="txtSalaBusqueda" id="txtSalaBusqueda" class="form-select form-select-sm" aria-label=".form-select" required onchange="habilitarBotonBusqueda();">
+                                            <option value="">Selecciona una sala</option>
+                                            <option value="Aqua" onkeyup="habilitarBotonBusqueda();">Aqua</option>
+                                            <option value="Ligna" onkeyup="habilitarBotonBusqueda();">Ligna</option>
+                                            <option value="Terra" onkeyup="habilitarBotonBusqueda();">Terra</option>
+                                            <option value="Flamma" onkeyup="habilitarBotonBusqueda();">Flamma</option>
+                                            <option value="Aer" onkeyup="habilitarBotonBusqueda();">Aer</option>
+                                            <option value="Meditation" onkeyup="habilitarBotonBusqueda();">Meditation</option>
+                                            <option value="Balance" onkeyup="habilitarBotonBusqueda();">Balance</option>
+                                            <option value="Nature" onkeyup="habilitarBotonBusqueda();">Nature</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionHorarioBusqueda">
+                                        <select style="max-width: 70%;" name="txtHorarioBusqueda" id="txtHorarioBusqueda" class="form-select form-select-sm" aria-label=".form-select" required onchange="habilitarBotonBusqueda();">
+                                            <option value="">Selecciona un horario</option>
+                                            <option value="08:00:00-10:00:00" onkeyup="habilitarBotonBusqueda();">08:00:00-10:00:00</option>
+                                            <option value="10:00:00-12:00:00" onkeyup="habilitarBotonBusqueda();">10:00:00-12:00:00</option>
+                                            <option value="12:00:00-14:00:00" onkeyup="habilitarBotonBusqueda();">12:00:00-14:00:00</option>
+                                            <option value="14:00:00-16:00:00" onkeyup="habilitarBotonBusqueda();">14:00:00-16:00:00</option>
+                                            <option value="16:00:00-18:00:00" onkeyup="habilitarBotonBusqueda();">16:00:00-18:00:00</option>
+                                            <option value="18:00:00-20:00:00" onkeyup="habilitarBotonBusqueda();">18:00:00-20:00:00</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionFechaBusqueda">
+                                        <input class="col-12" type="date" id="txtFechaBusqueda" name="txtFechaBusqueda" required onclick="validarFecha();" onchange="habilitarBotonBusqueda();">
+                                    </div>
+                                    <div class="col-8 d-flex align-items-center justify-content-center tipoBusquedaOculto" id="seccionEstatusBusqueda">
+                                        <div class="col-4">
+                                            Pendiente <input type="radio" id="txtBusquedaEstatus1" name="txtBusquedaEstatus" value=1 onclick="habilitarBotonBusqueda();"> 
+                                        </div>
+                                        <div class="col-4">
+                                            Realizada <input type="radio" id="txtBusquedaEstatus2" name="txtBusquedaEstatus" value=2 onclick="habilitarBotonBusqueda();">
+                                        </div>
+                                        <div class="col-4">
+                                            Cancelada <input type="radio" id="txtBusquedaEstatus3" name="txtBusquedaEstatus" value=3 onclick="habilitarBotonBusqueda();">
+                                        </div>
+                                    </div>
+                                    <button id="btnBuscar" class="col-1 d-flex align-items-center justify-content-end" onclick="mostrarBusqueda(); resultadoBusquedaReservacion();" disabled>
+                                        <img src="./img/buscar.svg" alt="Buscar" class="icono col-2 img-fluid">
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="col-1 div_agregar d-flex align-items-center rounded">
+                                <button onclick="cargarModuloAgregarReservacionCliente();">
+                                    <img src="./img/agregar.svg" alt="Agregar nueva reservación" class="icono img-fluid">
+                                </button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="container">      
+                            <div class="row">
+                                <div class="col-md-12 table-responsive contenedor_tabla_gestiones" id="datosTablaBusquedaReservacionesCliente" style="display: none;">
+                                    <div class="row d-flex align-items-center justify-content-between col-10 my-1 mb-4">
+                                        <div class="col-10 d-flex justify-content-center">
+                                            <h4 class="text-center">Resultados de búsqueda:</h4>
+                                        </div>
+                                        <div class="col-1 d-flex align-items-center rounded contenedor_ocultarBusqueda" id="btnOcultarBusqueda">
+                                            <button type="button" onclick="ocultarBusqueda(); limpiarFormularioBuscar();">
+                                                <img src="img/tacha.svg" alt="Cancelar" class="icono img-fluid">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <table class="col-12">
+                                            <thead>
+                                                <tr class="titulo_tabla">
+                                                    <td>
+                                                        Clave
+                                                    </td>
+                                                    <td>
+                                                        Tratamiento
+                                                    </td>
+                                                    <td>
+                                                        Sucursal
+                                                    </td>
+                                                    <td>
+                                                        Sala
+                                                    </td>
+                                                    <td>
+                                                        Horario
+                                                    </td>
+                                                    <td>
+                                                        Fecha
+                                                    </td>
+                                                    <td>
+                                                        Estatus
+                                                    </td>
+                                                    <td>
+                                                        Info.
+                                                    </td>
+                                                    <td>
+                                                        Edit.
+                                                    </td>
+                                            </thead>
+                                            <tbody id="datosBusquedatablaReservacionesCliente">
+                                            </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-12 table-responsive contenedor_tabla_gestiones" id="tablaReservacionesCliente">
+                                    <table class="col-12">
+                                        <thead>
+                                            <tr class="titulo_tabla">
+                                                <td>
+                                                    Clave
+                                                </td>
+                                                <td>
+                                                    Tratamiento
+                                                </td>
+                                                <td>
+                                                    Sucursal
+                                                </td>
+                                                <td>
+                                                    Sala
+                                                </td>
+                                                <td>
+                                                    Horario
+                                                </td>
+                                                <td>
+                                                    Fecha
+                                                </td>
+                                                <td>
+                                                    Estatus
+                                                </td>
+                                                <td>
+                                                    Info.
+                                                </td>
+                                                <td>
+                                                    Edit.
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="datostablaReservacionesCliente">
+                                        </tbody>
+                                    </table>
+                                </div>
+                        <section class="col-md-4" id="seccionGestionarReservacionCliente" style="display: none;"></section>
+                    </div>
+                </section>
+                <br>
+            </div>
+            <div class="col-12 fondo_footer header_footer">
+                <footer class="row text-center align-items-center">
+                    <p>Los Aldama #560, León, Gto.</p>
+                    <p>477 123 12 12</p>
+                    <p>Todos los derechos reservados My SPA © 2021</p>
+                </footer>
+            </div>
+        </div>
+        <script src="./js/jquery/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script src="./style/bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
+        <script src="./style/font_awesome_5_15_3/js/all.js" type="text/javascript"></script>
+        <script src="./style/sweetalert2/sweetalert2.js" type="text/javascript"></script>
+        <script src="./js/reservacionesCliente.js" type="text/javascript"></script>
+        <script src="./js/usuarios.js" type="text/javascript"></script>
+    </body>
+</html>

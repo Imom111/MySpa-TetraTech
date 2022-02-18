@@ -1,0 +1,310 @@
+/*Diseño de todas las Gestiones */
+
+/*Diseño del header de la página */
+
+.header_footer p{
+    margin: -1px 0px -1px 0px;
+    font-weight:600;
+}
+
+.header_footer a:hover{
+    color: #077539;
+    background-color: #00ffb3;
+    border: #07753944 0.1px solid;
+    transition: 1s;
+}
+
+.fondo_footer{
+    background-color: #adf2ce;
+    color: #077539;
+    padding: 1% 0 1% 0;
+}
+
+.fondo_header{
+    background-color: #adf2ce;
+    color: #077539;
+    max-height: 3.5em;
+}
+.fondo_nav_gestion{
+    background-color: #CCFFFF;
+    color: #000000;
+    border: #0070C0 0.1px solid;
+    border-radius: 15px;
+}
+
+#btnPerfil{
+    margin-top: 2px;
+    min-height: 2.9em;
+    max-height: 2.9em;
+    overflow: hidden;
+}
+
+.icono{
+    width: 40px;
+    min-width: 20px;
+}
+
+.icono_eliminarServicio{
+    width: 90px;
+    min-width: 20px;
+}
+
+.nav_hiervinculo{
+    color: #077539;
+    text-decoration: none;
+    font-weight:600;
+}
+
+.nav_hiervinculo_gestion{
+    color: #000000;
+    text-decoration: none;
+    font-weight:600;
+}
+
+.activado{
+    background-color: rgb(163, 194, 123);
+    color: rgb(255, 255, 255);
+}
+
+#campo_gestiones{
+    background-color: #FBFBFB;
+}
+
+.activado_gestion{
+    background-color: #FFD966;
+    color: rgb(0, 0, 0);
+}
+
+#logo{
+    width: 50px;
+    margin-top: 10%;
+    z-index: 3;
+}
+
+#btnPerfil{
+    height: 40%;
+    color: #077539;
+    border: none;
+    background-color: transparent;
+}
+
+#btnPerfil:hover{
+    color: #077539;
+    background-color: #00ffb3;
+    border: #07753944 0.1px solid;
+    transition: 1s;
+}
+
+/*Diseño del título de las gestiones*/
+.titulo_gestiones{
+    color: #0070C0;
+    font-weight:600;
+}
+
+/*Diseño del navegador de la página */
+.div_nav_gestion{
+    padding: 0 20px 0 20px;
+}
+
+.div_nav_gestion_hipervinculos div{
+    border-radius: 15px;
+    text-align: center;
+}
+
+/*Diseño de la tabla de Gestiones */
+.contenedor_tabla_gestiones{
+  height: 500px;
+  overflow-y: scroll;
+}
+
+table{
+    color: #1F4E78;
+    border: #00aeffc7 0.5px solid;
+}
+
+table td{
+    text-align: center;
+    border: #00aeffc7 0.5px solid;
+}
+
+.titulo_tabla td{
+    background-color: #B4C7E7;
+    font-weight:600;
+}
+
+.registro{
+    background-color: #ffffff;
+}
+
+.registro button{
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.id_tabla{
+    background-color: #DDEBF7;
+    font-weight:600;
+}
+
+/*Diseño del buscador*/
+.div_buscar{
+    background-color: #ffffff;
+    border: #000000 0.5px solid;
+    padding: 0;
+    border-radius: 15px;
+}
+
+.div_buscar input{
+    outline: none;
+    border: 0;
+    padding: 0 1% 0 3%;
+}
+
+.div_buscar button{
+    border: 0;
+    background-color: transparent;
+}
+
+/*Diseño para agregar un empleado, cliente, sala, producto, tratamiento, servicio y reservación*/
+.div_agregar{
+    background-color: #159DAB;
+    border: #000000 0.5px solid;
+    margin-left: 2%;
+    padding: 0;
+    border-radius: 15px;
+}
+
+.div_agregar button{
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+}
+
+.div_agregar a{
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+}
+
+/*Diseño de la ventana emergente Agregar*/
+#ventanaEmergente{
+    margin: auto;
+    padding-bottom: 1%;
+    border-radius: 20px;
+    font-family: 'calibri';
+    border: #c5c5c5 0.5px solid;
+    background-color: #ffffff;
+}
+
+#boton_aceptar{
+    background-color: #a9d18e;
+    border: black (000000);
+    width: 50px;
+    height: 50px;
+    margin-right: 15%;
+}
+
+#boton_cancelar{
+    background-color: #fa6a6a;
+    border: black (000000);
+    width: 50px;
+    height: 50px;
+    margin-left: 15%;
+}
+
+.titulo_agregar{
+    background-color: #f8cbad;
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+}
+
+.contenedor_agregar input,textarea{
+    border: 0;
+    padding-left: 5%;
+    width: 80%;
+    border: #d1d1d1 0.5px solid;
+    border-radius: 5px;
+}
+
+.contenedor_agregar{
+    margin: 2% 0 2% 0;
+}
+
+/*Diseño de la ventana emergente Editar*/
+.titulo_eliminar{
+    background-color: rgb(132, 237, 255);
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+}
+
+.contenedor_editar input{
+    border: 0;
+    padding-left: 5%;
+    width: 80%;
+    border: #3ad8ff 0.5px solid;
+    border-radius: 5px;
+}
+
+/*Diseño del botón para eliminar un servicio*/
+.eliminar_servicio{
+    border: 0;
+    background-color: #fa6a6a;
+}
+
+.contenedor_editar{
+    margin: 2% 0 2% 0;
+}
+
+/*Diseño de la ventana emergente Informar*/
+.titulo_informar{
+    background-color: rgb(194, 194, 194);
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+}
+
+.contenedor_informar input{
+    border: 0;
+    padding-left: 5%;
+    width: 80%;
+    border: rgb(194, 194, 194) 0.5px solid;
+    border-radius: 5px;
+}
+
+.contenedor_informar{
+    margin: 2% 0 2% 0;
+}
+
+/*Diseño del buscador*/
+.contenedorSelectorBuscarPor{
+    background-color: transparent;
+    margin: -0.5% 0 -0.5% 0;
+}
+
+.contenedorSelectorBuscarPor select{
+    border: 0;
+    background-color: transparent;
+    width: 100%;
+}
+
+.tipoBusquedaOculto{
+    display: none !important;
+}
+
+.contenedor_ocultarBusqueda{
+    background-color: #fa6a6a;
+    margin-left: 1%;
+    width: 60px;
+    height: 40px;
+    padding: 0;
+    border: rgb(0, 0, 0) 0.5px solid;
+    border-radius: 20px;
+}
+
+.contenedor_ocultarBusqueda button{
+    background-color: #fa6a6a;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

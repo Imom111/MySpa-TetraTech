@@ -1,0 +1,135 @@
+<div class="col-12" id="ventanaEmergente">
+    <div class="text-center titulo_agregar">
+        <h2>Agregar reservación</h2>
+    </div>
+    <div class="col-12">
+        <form id="agregarReservacionFormulario">
+            <div class="my-4 px-3">
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtCodigoReser">ID:</label>
+                    <input type="number" id="txtCodigoReser" name="txtCodigoReser" placeholder="Código de reservación" readonly required style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtClienteReser">Cliente:</label>
+                    <select id="txtClienteReser" name="txtClienteReser" class="form-select form-select-sm" aria-label=".form-select">
+                        <option value="" selected>Indica el cliente</option>
+                        <option value="Sonia">Sonia</option>
+                        <option value="Marisol">Marisol</option>
+                        <option value="Yolanda">Yolanda</option>
+                        <option value="Jazmin">Jazmin</option>
+                        <option value="Jennifer Margarita">Jennifer Margarita</option>
+                        <option value="Betzabeth Guadalupe">Betzabeth Guadalupe</option>
+                        <option value="Fatima Manuela">Fatima Manuela</option>
+                        <option value="Ashley Guadalupe">Ashley Guadalupe</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtTratamientoReser">Tratamiento:</label>
+                    <select id="txtTratamientoReser" name="txtTratamientoReser" class="form-select form-select-sm" aria-label=".form-select">
+                        <option value="" selected>Indica el tratamiento</option>
+                        <option value="Aromaterapia">Aromaterapia</option>
+                        <option value="Batido Natural">Batido natural</option>
+                        <option value="Ducha de sensaciones">Ducha de sensaciones</option>
+                        <option value="Exfoliacion corporal">Exfoliacion corporal</option>
+                        <option value="Exfoliacion facial">Exfoliacion facial</option>
+                        <option value="Hidromasaje">Hidromasaje</option>
+                        <option value="Masaje hawaiano">Masaje hawaiano</option>
+                        <option value="Masaje con escencias naturales">Masaje con escencias naturales</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtEmpleadoReser">Empleado:</label>
+                    <select id="txtEmpleadoReser" name="txtEmpleadoReser" class="form-select form-select-sm" aria-label=".form-select">
+                        <option value="" selected>¿Qué empleado lo/a atenderá?</option>
+                        <option value="Diana Guadalupe">Diana Guadalupe</option>
+                        <option value="Denisse">Denisse</option>
+                        <option value="Margarita de Jesus">Margarita de Jesus</option>
+                        <option value="Juan Diego">Juan Diego</option>
+                        <option value="Ana Fernanda">Ana Fernanda</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtSucursalReser">Sucursal:</label>
+                    <select id="txtSucursalReser" name="txtSucursalReser" class="form-select form-select-sm" aria-label=".form-select">
+                        <option value="">Elige la sucursal</option>
+                        <option value="León Abastos 811">León Abastos 811</option>
+                        <option value="León boulevard Hidalgo 4009">León boulevard Hidalgo 4009</option>
+                        <option value="León Centro Max">León Centro Max</option>
+                        <option value="León del Moral 658">León del Moral 658</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtSalaReser">Sala:</label>
+                    <select id="txtSalaReser" name="txtSalaReser" class="form-select form-select-sm" aria-label=".form-select">
+                        <option value="">¿En qué sala desea ser atendido/a?</option>
+                        <option value="Aqua">Aqua</option>
+                        <option value="Ligna">Ligna</option>
+                        <option value="Terra">Terra</option>
+                        <option value="Flamma">Flamma</option>
+                        <option value="Aer">Aer</option>
+                        <option value="Meditation">Meditation</option>
+                        <option value="Balance">Balance</option>
+                        <option value="Nature">Nature</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar" id="contenedorFecha">
+                    <label for="txtFechaReser">Fecha:</label>
+                    <input type="date" id="txtFechaReser" name="txtFechaReser" required onclick="validarFecha();">
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtHorarioReser">Horario:</label>
+                    <select id="txtHorarioReser" name="txtHorarioReser" class="form-select form-select-sm" aria-label=".form-select">
+                        <option value="" selected>Elige el horario</option>
+                        <option value="08:00:00-10:00:00">08:00:00-10:00:00</option>
+                        <option value="10:00:00-12:00:00">10:00:00-12:00:00</option>
+                        <option value="12:00:00-14:00:00">12:00:00-14:00:00</option>
+                        <option value="14:00:00-16:00:00">14:00:00-16:00:00</option>
+                        <option value="16:00:00-18:00:00">16:00:00-18:00:00</option>
+                        <option value="18:00:00-20:00:00">18:00:00-20:00:00</option>
+                    </select>
+                </div>
+                <div class="d-flex justify-content-between contenedor_agregar">
+                    <label for="txtEstatusReser">Estatus:</label>
+                    <div class="d-flex justify-content-center col-10 container">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                Pendiente
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <input type="radio" id="txtEstatusReser1" name="txtEstatusReser" value=1 checked required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                Realizada
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <input type="radio" id="txtEstatusReser2" name="txtEstatusReser" value=2 required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                Cancelada
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <input type="radio" id="txtEstatusReser3" name="txtEstatusReser" value=3 required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-sm" id="boton_aceptar" onclick="guardarReservacion();">
+                    <img src="img/paloma.svg" alt="Agregar" class="icono img-fluid">
+                </button>
+                <button type="button" class="btn btn-sm" id="boton_cancelar" onclick="regresar();">
+                    <img src="img/tacha.svg" alt="Cancelar" class="icono img-fluid">
+                </button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>
+
+
+

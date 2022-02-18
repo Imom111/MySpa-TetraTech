@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MySPA - Filosofía</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Página dedicada para la filosofía de la empresa MySPA">
+        <meta name="keywords" content="spa, MySPA, empresa, relajación y la filosofía">
+        <meta name="author" content="Equipo TetraNet">
+        <link href="./style/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="./style/estilosGestiones.css" rel="stylesheet" type="text/css">
+        <link href="./style/principalEstilos.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" type="image/png" href="./img/icono.png">
+    </head>
+    <body class="bodyFilosofia" onload="cargarUsuario();">
+        <div class="container-fluid">
+            <div class="col-12 fondo_header header_footer d-flex justify-content-between align-items-center text-center">
+                <header class="row col-12 container-fluid">
+                    <div class="col-2 d-flex justify-content-around align-items-center">
+                        <div class="col-12 d-flex justify-content-around align-items-center">
+                            <img src="./img/logo.png" id="logo" class="img-fluid icono" alt="Logotipo My SPA">
+                        </div>
+                    </div>
+                    <div class="col-8 d-flex justify-content-center align-items-center">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="navbar-nav header_footer">
+                                <div class="row d-flex justify-content-around">
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./index.html">Inicio</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./sucursales.html">Sucursales</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="nav-item nav-link nav_hiervinculo rounded px-1" href="./filosofia.html">Filosofía</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-2 mt-1">
+                        <button type="button" class="row rounded d-flex justify-content-between align-items-center" id="btnPerfil" onclick="getionarPerfil();">
+                            <div class="col d-flex justify-content-center align-items-center text-center">
+                                <img src="./img/perfil.svg" id="imgPerfil" alt="Iniciar sesión" class="icono perfil">
+                            </div>
+                            <div class="col d-flex justify-content-between align-items-center text-center">
+                                <p class="text-center" id="nombreUsuario"></p>
+                            </div>
+                        </button>
+                    </div>
+                </header>
+            </div>
+            <br><br>
+            <div class="d-flex justify-content-center">
+                <h1 class="tituloFilosofia">Nuestra visión, misión y valores son:</h1>
+            </div>
+            <!--En esta sección son los contenedores de información, cada tarjeta tiene nuestra visión, misión y valores.-->
+            <div class="contenedorFilosofia">
+                <div class="tarjetaFilosofia">
+                    <img src="img/vision.png">
+                    <h4>Visión</h4>
+                        <p>Ser en 5 años como líderes de spa a nivel estatal.</p>
+                </div>
+        
+                <div class="tarjetaFilosofia">
+                    <img src="img/mision.png">
+                    <h4>Misión</h4>
+                        <p>Servicios de relajación integral para todos los clientes de nuestra región.</p>
+                </div>
+        
+                <div class="tarjetaFilosofia">
+                    <img src="img/valores.png">
+                    <h4>Valores</h4>
+                        <p>Servicial, pulcritud, relajación y sustentabilidad.</p>
+                </div>
+            </div>
+            <div class="col-12 fondo_footer header_footer">
+                <footer class="row text-center align-items-center">
+                    <p>Los Aldama #560, León, Gto.</p>
+                    <p>477 123 12 12</p>
+                    <p>Todos los derechos reservados My SPA © 2021</p>
+                </footer>
+            </div>
+        </div>
+        <script src="./js/jquery/jquery-3.6.0.min.js" type="text/javascript"></script>
+        <script src="./style/bootstrap/js/bootstrap.bundle.js" type="text/javascript"></script>
+        <script src="js/principal.js" type="text/javascript"></script>
+    </body>
+</html>

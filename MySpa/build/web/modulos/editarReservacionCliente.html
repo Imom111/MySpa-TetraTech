@@ -1,0 +1,73 @@
+<div class="col-12" id="ventanaEmergente">
+    <div class="text-center titulo_eliminar">
+        <h2>Editar reservación</h2>
+    </div>
+    <div class="col-12">
+        <form>
+            <div class="my-4 px-3">
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtCodigoReser">ID:</label>
+                    <input type="number" id="txtCodigoReser" name="txtCodigoReser" placeholder="Código de la reservación" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtClienteReser">Cliente:</label>
+                    <input type="text" id="txtClienteReser" name="txtClienteReser" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtTratamientoReser">Tratamiento:</label>
+                    <input type="text" id="txtTratamientoReser" name="txtTratamientoReser" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtEmpleadoReser">Empleado:</label>
+                    <input type="text" id="txtEmpleadoReser" name="txtEmpleadoReser" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtSucursalReser">Sucursal:</label>
+                    <input type="text" id="txtSucursalReser" name="txtSucursalReser" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtSalaReser">Sala:</label>
+                    <input type="text" id="txtSalaReser" name="txtSalaReser" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtHorarioReser">Horario:</label>
+                    <input type="text" id="txtHorarioReser" name="txtHorarioReser" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtFechaReser">Fecha:</label>
+                    <input type="date" id="txtFechaReser" name="txtFechaReser" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtEstatusReser">Estatus:</label>
+                    <div class="d-flex justify-content-center col-10 container">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                Pendiente
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <input type="radio" id="txtEstatusReser1" name="txtEstatusReser" value=1 checked required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                Cancelada
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <input type="radio" id="txtEstatusReser2" name="txtEstatusReser" value=0 required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-sm" id="boton_aceptar" style="margin-right: 0;" onclick="editarReservacionCliente();">
+                    <img src="img/paloma.svg" alt="Regresar" class="icono img-fluid">
+                </button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>
+
+
+

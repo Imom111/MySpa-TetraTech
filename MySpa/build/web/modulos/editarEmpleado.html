@@ -1,0 +1,129 @@
+<div class="col-12" id="ventanaEmergente">
+    <div class="text-center titulo_eliminar">
+        <h2>Editar empleado</h2>
+    </div>
+    <div class="col-12">
+        <form>
+            <div class="my-4 px-4">
+                <div class="row">
+                    <div class="col-md-2 d-flex justify-content-between contenedor_editar mb-3">
+                        <label for="txtCodigoEmpleado" class="form-label">ID:</label>
+                        <input type="number" id="txtCodigoEmpleado" name="txtCodigoEmpleado" placeholder="Código del empleado" readonly required style="background-color: RGB(222, 235, 247)">
+                        <input type="hidden" id="txtCodigoPersona" name="txtCodigoPersona" placeholder="Código del persona" readonly required style="background-color: RGB(222, 235, 247)">
+                        <input type="hidden" id="txtCodigoUsuario" name="txtCodigoUsuario" placeholder="Código del usuario" readonly required style="background-color: RGB(222, 235, 247)">
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-between contenedor_editar mb-3">
+                        <label for="txtNumeroEmpleado" class="form-label">Número único:</label>
+                        <input type="text" id="txtNumeroEmpleado" name="txtNumeroEmpleado" placeholder="Número único del empleado" readonly required style="background-color: RGB(222, 235, 247)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtNombreEmpleado">Nombre:</label><br>
+                        <input type="text" id="txtNombreEmpleado" name="txtNombreEmpleado" placeholder="Nombre del empleado" autofocus required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtApellidoPEmpleado">Apellido paterno:</label>
+                        <input type="text" id="txtApellidoPEmpleado" name="txtApellidoPEmpleado" placeholder="Apellido paterno del empleado" required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtApellidoMEmpleado">Apellido materno:</label>
+                        <input type="text" id="txtApellidoMEmpleado" name="txtApellidoMEmpleado" placeholder="Apellido materno del empleado" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtGeneroEmpleado">Género:</label><br>
+                        <select style="max-width: 80%;" id="txtGeneroEmpleado" class="form-select form-select-sm" aria-label=".form-select" required>
+                            <option value="">Indica tu género</option>
+                            <option value="O">Prefiero no decir</option>
+                            <option value="M">Hombre</option>
+                            <option value="F">Mujer</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtTelefonoEmpleado">Teléfono:</label><br>
+                        <input type="text" id="txtTelefonoEmpleado" name="txtTelefonoEmpleado" maxlength="10" placeholder="Telefono del empleado" required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtRfcEmpleado">RFC:</label><br>
+                        <input type="text" id="txtRfcEmpleado" name="txtRfcEmpleado" maxlength="16" placeholder="RFC del empleado" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtDomicilioEmpleado">Domicilio:</label><br>
+                        <input type="text" id="txtDomicilioEmpleado" name="txtDomicilioEmpleado" placeholder="Domicilio del empleado" required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtPuestoEmpleado">Puesto:</label><br>
+                        <input type="text" id="txtPuestoEmpleado" name="txtPuestoEmpleado" placeholder="Puesto del empleado" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtUsuarioEmpleado">Usuario:</label><br>
+                        <input type="text" id="txtUsuarioEmpleado" name="txtUsuarioEmpleado" placeholder="Nombre de usuario" required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtContrasenaEmpleado">Contraseña:</label><br>
+                        <input type="password" id="txtContrasenaEmpleado" name="txtContrasenaEmpleado" placeholder="Contraseña del usuario" required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtRolEmpleado">Rol:</label><br>
+                        <input type="text" id="txtRolEmpleado" name="txtRolEmpleado" placeholder="Rol del empleado" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 justify-content-between contenedor_editar">
+                        <label for="txtFotoEmpleado">Selecciona la imagen:</label><br>
+                        <input type="file" class="form-control-file" id="txtFotoEmpleado" name="txtFotoEmpleado" required style="padding: 0" onchange="mostrarImagen();"><br><br>
+                        <input type="hidden" id="txtCodigoImagenEmpleado" name="txtCodigoImagenEmpleado">
+                        <button onclick="eliminarImagen();" type="button" class="btn btn-danger">Eliminar imagen</button>
+                    </div>
+                    <div class="col-md-6 justify-content-between contenedor_editar">
+                        <img id="imgFotoEmpleado" name="imgFotoEmpleado" alt="Imagen del empleado" height="200" width="200">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtEstatusEmpleado">Estatus:</label>
+                        <div class="d-flex justify-content-center col-10 container">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    Activo
+                                </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <input type="radio" id="txtEstatusEmpleado1" name="txtEstatusEmpleado" value=1 checked required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    Inactivo
+                                </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <input type="radio" id="txtEstatusEmpleado2" name="txtEstatusEmpleado" value=2 required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-sm" id="boton_aceptar" onclick="editarEmpleado();">
+                    <img src="img/paloma.svg" alt="Editar" class="icono img-fluid">
+                </button>
+                <button type="button" class="btn btn-sm" id="boton_cancelar" onclick="regresar();">
+                    <img src="img/tacha.svg" alt="Cancelar" class="icono img-fluid">
+                </button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>

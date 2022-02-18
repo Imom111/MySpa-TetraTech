@@ -1,0 +1,1098 @@
+/* Diseño de la página de bienvenida */
+.bodyInicio{
+    background-image: url(../img/fondoBienvenida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.servicioTitulo{
+    background: #adf2ce;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    color: #077539;
+    font-size: 24px;
+} 
+
+.servicioDescripcion{
+    background: #adf2ce;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    color: #077539;
+    font-size: 24px;
+}
+
+.contenedorInicioServicios{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.contenedorInicioServicios .tarjetaInicioServicios{
+    width: 350px;
+    background: #adf2ce;
+    height: 60s0px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    font-family: sans-serif;
+}
+
+.contenedorInicioServicios .tarjetaInicioServicios:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.8);
+}
+
+.contenedorInicioServicios .tarjetaInicioServicios img{
+    width: 350px;
+    height: 250px;
+}
+
+.contenedorInicioServicios .tarjetaInicioServicios h4{
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.contenedorInicioServicios .tarjetaInicioServicios p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    color: #077539;
+    font-family: sans-serif;
+}
+
+/*Diseño de la página Sucursal*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.bodySucursal{
+    background-image: url(../img/fondoBienvenida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+}
+
+.tituloSucursal{
+    width: 40%;
+    background: #adf2ce;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    color: #077539;
+    font-family: sans-serif;
+} 
+
+.contenedorSucursal{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.contenedorSucursal .tarjetaSucursal{
+    width: 250px;
+    background: #adf2ce;
+    height: 60s0px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    font-family: sans-serif;
+}
+
+.contenedorSucursal .tarjetaSucursal:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.8);
+}
+
+.contenedorSucursal .tarjetaSucursal img{
+    width: 250px;
+    height: 250px;
+}
+
+.contenedorSucursal .tarjetaSucursal h4{
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.contenedorSucursal .tarjetaSucursal p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    color: #077539;
+    font-family: sans-serif;
+}
+
+/*Diseño de la página de Filosofía*/
+
+.bodyFilosofia{
+    background-image: url(../img/fondoBienvenida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+}
+
+.tituloFilosofia{
+    width: 50%;
+    background: #adf2ce;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 30px;
+    text-align: center;
+    color: #077539;  
+} 
+
+.contenedorFilosofia{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.contenedorFilosofia .tarjetaFilosofia{
+    width: 250px;
+    background: #adf2ce;
+    height: 60s0px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    font-family: sans-serif;
+}
+
+.contenedorFilosofia .tarjetaFilosofia:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.8);
+}
+
+.contenedorFilosofia .tarjetaFilosofia img{
+    width: 250px;
+    height: 250px;
+}
+
+.contenedorFilosofia .tarjetaFilosofia h4{
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.contenedorFilosofia .tarjetaFilosofia p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    color: #077539;
+    font-family: sans-serif;
+}
+
+/*Diseño de la página Codigo*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bodyCodigo{
+    background-image: url(../img/fondoBienvenida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedor_Codigo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.cajatraseraCodigo{
+    width: 150%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 255, 179, 0.5);
+
+}
+
+.cajatraseraCodigo div{
+    margin: 100px 70px;
+    color: white;
+    transition: all 500ms;
+}
+
+
+.cajatraseraCodigo div p{
+    margin-top: 30px;
+}
+
+.cajatraseraCodigo div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.cajatraseraCodigo div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/*Diseño de los formularios de la página codigo*/
+
+.contenedorCodigoResivido{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -170px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedorCodigoResivido form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedorCodigoResivido form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #077539
+}
+
+#botonCodigo{
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    background: #077539;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    width: 50%;
+    margin: 10px auto;
+}
+
+.contenedorCodigoResivido form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.formularioCodigo{
+    opacity: 1;
+    display: block;
+}
+.formulario__register{
+    display: none;
+}
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .cajatraseraCodigo{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cajatraseraCodigo div{
+        margin: 0px;
+        position: absolute;
+    }
+
+    /*Formularios*/
+
+    .contenedorCodigoResivido{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedorCodigoResivido form{
+        position: relative;
+    }
+}
+
+/*Diseño de la página Crear Contraseña*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bodyCrear{
+    background-image: url(../img/fondoBienvenida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedorCrear{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.cajaTraseraCrear{
+    width: 150%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 255, 179, 0.5);
+
+}
+
+.cajaTraseraCrear div{
+    margin: 100px 70px;
+    color: white;
+    transition: all 500ms;
+}
+
+.cajaTraseraCrear div p{
+    margin-top: 30px;
+}
+
+.cajaTraseraCrear div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.cajaTraseraCrear div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/*Diseño de los formularios de la página crear contraseña*/
+
+.contenedorCrearContrasena{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -170px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedorCrearContrasena form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedorCrearContrasena form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #077539
+}
+
+#botonCrearContrasena{
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    background: #077539;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    width: 50%;
+    margin: 10px 80px;
+}
+
+.contenedorCrearContrasena form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.formularioCrear{
+    opacity: 1;
+    display: block;
+}
+.formulario__register{
+    display: none;
+}
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .cajaTraseraCrear{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cajaTraseraCrear div{
+        margin: 0px;
+        position: absolute;
+    }
+
+    /*Formularios*/
+
+    .contenedorCrearContrasena{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedorCrearContrasena form{
+        position: relative;
+    }
+}
+
+/*Diseño de de la página olvidaste*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bodyOlvidaste{
+    background-image: url(../img/fondoBienvenida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedorOlvidaste{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.cajaTraseraOlvidaste{
+    width: 150%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 255, 179, 0.5);
+
+}
+
+.cajaTraseraOlvidaste div{
+    margin: 100px 70px;
+    color: white;
+    transition: all 500ms;
+}
+
+.cajaTraseraOlvidaste div p{
+    margin-top: 30px;
+}
+
+.cajaTraseraOlvidaste div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.cajaTraseraOlvidaste div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+/*Diseño de los formularios de la página olvidaste*/
+
+.contenedorCorreoOlvidaste{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -170px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedorCorreoOlvidaste form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+#botonOlvidaste{
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    background: #077539;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    width: 50%;
+    margin: 10px 80px;
+}
+
+.contenedorCorreoOlvidaste form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #077539
+}
+
+.contenedorCorreoOlvidaste form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+
+.formularioOlvidaste{
+    opacity: 1;
+    display: block;
+}
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .cajaTraseraOlvidaste{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cajaTraseraOlvidaste div{
+        margin: 0px;
+        position: absolute;
+    }
+
+    /*Formularios*/
+    .contenedorCorreoOlvidaste{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedorCorreoOlvidaste form{
+        position: relative;
+    }
+}
+
+/*Diseño de la página de pefil*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.bodyPerfil {
+    color: #404040;
+    font-family: "Arial", Segoe UI, Tahoma, sans-serifl, Helvetica Neue, Helvetica;
+}
+
+.botonPerfil{
+        padding: 10px;
+        border: none;
+        font-size: 14px;
+        background: #077539;
+        font-weight: 600;
+        cursor: pointer;
+        color: white;
+        outline: none;
+}
+.botonPerfilCerrarSesion{
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    background: red;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+.seccionPerfilUsuario .perfilUsuarioBody,
+.seccionPerfilUsuario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccionPerfilUsuario .perfilUsuarioEncabezado {
+    width: 100%;
+    display: flex;
+    z-index:2;
+    justify-content: center;
+    background: linear-gradient(#00ffb3, transparent);
+    margin-bottom: 1.25rem;
+}
+
+.seccionPerfilUsuario .perfilUsuarioPortada {
+    display: block;
+    position: relative;
+    z-index:2;
+    width: 90%;
+    height: 17rem;
+    background: linear-gradient(45deg, #00ffb3, #077539);
+    border-radius: 0 0 20px 20px;
+}
+
+.seccionPerfilUsuario .perfilUsuarioAvatar {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+    z-index: 1;
+}
+
+.seccionPerfilUsuario .perfilUsuarioAvatar img {
+    width: 100%;
+    position: relative;
+    border-radius: 50%;
+}
+
+.perfilUsuarioAvatar:hover{
+    border: #adf2ce solid 5px;
+}
+
+.seccionPerfilUsuario .perfilUsuarioBody {
+    width: 70%;
+    position: relative;
+    max-width: 750px;
+}
+
+.seccionPerfilUsuario .perfilUsuarioBody .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+}
+
+.seccionPerfilUsuario .perfilUsuarioBody .texto {
+    color: #848484;
+    font-size: 0.95em;
+}
+
+.seccionPerfilUsuario .perfilUsuarioPieDePagina,
+.seccionPerfilUsuario .perfilUsuarioDatos {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 100%;
+    padding: 30px 100px;
+}
+
+.seccionPerfilUsuario .perfilUsuarioDatos {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.seccionPerfilUsuario .listaDatos {
+    width: 50%;
+    list-style: none;
+}
+
+.seccionPerfilUsuario .listaDatos li {
+    padding: 5px 0;
+}
+
+.seccionPerfilUsuario .listaDatos  li input{
+    width: 100%;
+}
+
+.seccionPerfilUsuario .listaDatos li>.icono {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+/* Diseño de adaptación a dispositivos de la página perfil */
+@media (max-width: 750px) {
+
+    .seccionPerfilUsuario .listaDescripcion {
+        width: 57%;
+    }
+
+    .seccionPerfilUsuario .listaDatos {
+        width: 100%;
+    }
+
+    .seccionPerfilUsuario .listaDescripcion li input{
+        width: auto;
+    }
+
+    .seccionPerfilUsuario .perfilUsuarioPortada,
+    .seccionPerfilUsuario .perfilUsuarioBody {
+        width: 95%;
+    }
+
+    .botonPerfil{
+        width: 100%;
+    }
+    .botonPerfilCerrarSesion{
+        width: 100%;
+    }
+}
+
+/* Diseño de la página de login*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bodyLogin{
+    background-image: url(../img/fondoBienvenida.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.advertencias{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #B06AB3;
+    padding-top: 20px;
+}
+
+.form .grupo{
+    position: relative;
+    margin: 45px;
+}
+:root{
+    --colorTextos: #00ffb3;
+}
+input{
+    background: none;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border:none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+
+input:focus{
+    outline: none;
+    color: #5e5d5d;
+}
+option{
+    color: #5e5d5d;
+}
+.labelDiseño{
+    color: #077539;
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+}
+
+input:focus~.labelDiseño,
+input:valid~.labelDiseño{
+    top: -14px;
+    font-size: 12px;
+    color: #198d6a;
+}
+
+.barra{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: right, #077539;
+    transition: 0.3 ease width;
+    left: 0;
+}
+
+input:focus~.barra::before{
+    width: 100%;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedorTodo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.cajaTrasera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 255, 179, 0.5);
+
+}
+
+.cajaTrasera div{
+    margin: 100px 40px;
+    color: white;
+    transition: all 500ms;
+}
+
+
+.cajaTrasera div p,
+.cajaTrasera button{
+    margin-top: 30px;
+}
+
+.cajaTrasera div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.cajaTrasera div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.cajaTrasera button{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.cajaTrasera button:hover{
+    background: #fff;
+    color: #077539;
+}
+
+/*Diseño de los formularios de la página login*/
+
+.contenedorIniciarRegistrar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedorIniciarRegistrar form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedorIniciarRegistrar form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #077539
+}
+
+.botonIniciarRegistrar{
+    border: none;
+    font-size: 14px;
+    background: #077539;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    width: 50%;
+    margin: 10px auto;
+    text-align: center;
+    transition: .2s;
+}
+
+.botonIniciarRegistrar:hover{
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.formularioIniciar{
+    opacity: 1;
+    display: block;
+}
+.formularioRegistrar{
+    display: none;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .cajaTrasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cajaTrasera div{
+        margin: 0px;
+        position: absolute;
+    }
+
+    /*Formularios*/
+
+    .contenedorIniciarRegistrar{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedorIniciarRegistrar form{
+        position: relative;
+    }
+}
+
+.inputDeshabilitadoPerfil{
+    background-color: RGB(222, 235, 247);
+}

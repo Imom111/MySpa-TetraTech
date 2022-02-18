@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1120.0" style="-fx-background-color: #adf2ce;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utl.myspa.gui.ModuloClienteController">
+   <children>
+      <Pane layoutX="216.0" layoutY="90.0" prefHeight="78.0" prefWidth="892.0" style="-fx-background-color: #fcffff; -fx-background-radius: 30;" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="14.0" />
+      <AnchorPane prefHeight="800.0" prefWidth="202.0" style="-fx-background-color: #077539;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <TableView fx:id="tblClientes" layoutX="218.0" layoutY="573.0" onMouseClicked="#seleccionCliente" prefHeight="207.0" prefWidth="888.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="573.0">
+        <columns>
+          <TableColumn fx:id="colIdCliente" prefWidth="52.33332824707031" text="ID" />
+          <TableColumn fx:id="colNombre" prefWidth="167.6666717529297" text="Nombre Completo" />
+            <TableColumn fx:id="colGenero" prefWidth="86.33334350585938" text="Género" />
+            <TableColumn fx:id="colRfc" prefWidth="73.66665649414062" text="RFC" />
+            <TableColumn fx:id="colDireccion" prefWidth="198.0" text="Dirección" />
+            <TableColumn fx:id="colTelefono" prefWidth="116.0" text="Teléfono" />
+            <TableColumn fx:id="colEstatus" prefWidth="76.6666259765625" text="Estatus" />
+            <TableColumn fx:id="colCorreo" prefWidth="112.0" text="Correo electrónico" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="218.0" layoutY="185.0" prefHeight="371.0" prefWidth="888.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="14.0">
+         <children>
+            <JFXTextField fx:id="txtIdCliente" accessibleRole="TEXT" alignment="CENTER" blendMode="EXCLUSION" disable="true" editable="false" layoutX="14.0" layoutY="11.0" prefHeight="25.0" prefWidth="38.0" text="0" unFocusColor="#0737e4" visible="false" />
+            <JFXTextField fx:id="txtIdPersona" accessibleRole="TEXT" alignment="CENTER" blendMode="EXCLUSION" disable="true" editable="false" layoutX="62.0" layoutY="11.0" prefHeight="25.0" prefWidth="38.0" text="0" unFocusColor="#0737e4" visible="false" />
+            <JFXTextField fx:id="txtIdUsuario" accessibleRole="TEXT" alignment="CENTER" blendMode="EXCLUSION" disable="true" editable="false" layoutX="125.0" layoutY="11.0" prefHeight="25.0" prefWidth="38.0" text="0" unFocusColor="#0737e4" visible="false" />
+            <GridPane layoutY="17.0" prefHeight="346.0" prefWidth="888.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="94.0" minHeight="6.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button cancelButton="true" mnemonicParsing="false" onAction="#limpiar" opacity="0.15" prefHeight="49.0" prefWidth="80.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="30.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button cancelButton="true" mnemonicParsing="false" onAction="#eliminarCliente" opacity="0.15" prefHeight="49.0" prefWidth="80.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="30.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button cancelButton="true" mnemonicParsing="false" onAction="#guardarCliente" opacity="0.15" prefHeight="49.0" prefWidth="80.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="30.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#limpiar" prefHeight="49.0" prefWidth="80.0" style="-fx-background-color: #EFEFF0; -fx-background-radius: 10;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEliminar1" mnemonicParsing="false" onAction="#eliminarCliente" prefHeight="49.0" prefWidth="80.0" style="-fx-background-color: #ffa6a6; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnRegistrar1" mnemonicParsing="false" onAction="#guardarCliente" prefHeight="49.0" prefWidth="80.0" style="-fx-background-color: #159DAB; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <JFXTextField fx:id="txtNombre" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="160.0" promptText="Nombre">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtApePaterno" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="163.0" promptText="Apellido Paterno" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtApeMaterno" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="163.0" promptText="Apellido Materno" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <ComboBox fx:id="cbbxGenero" prefWidth="150.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                  <JFXTextField fx:id="txtDomicilio" alignment="CENTER" labelFloat="true" prefHeight="31.0" prefWidth="406.0" promptText="Domicilio" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="-220.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtRfc" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="163.0" promptText="RFC" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtTelefono" alignment="CENTER" labelFloat="true" prefHeight="31.0" prefWidth="170.0" promptText="Teléfono" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtCorreo" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="192.0" promptText="Correo" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtRol" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="176.0" promptText="Rol" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <AnchorPane prefHeight="59.0" prefWidth="142.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <children>
+                        <RadioButton fx:id="rbtnEstatusInactivo" layoutX="21.0" layoutY="35.0" mnemonicParsing="false" text="Inactivo">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="rbtnSexo" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbtnEstatusActivo" layoutX="21.0" layoutY="4.0" mnemonicParsing="false" text="Activo" toggleGroup="$rbtnSexo" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </AnchorPane>
+                  <JFXTextField fx:id="txtUsuario" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="176.0" promptText="Usuario" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="txtPassword" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="176.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </GridPane.margin>
+                  </JFXPasswordField>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#guardarCliente" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../../resources/Agregar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="74.0" fitWidth="30.0" onMouseClicked="#eliminarCliente" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../../resources/Eliminar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="63.0" fitWidth="40.0" onMouseClicked="#limpiar" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../../resources/Limpiar.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="txtNumUnico" alignment="CENTER" editable="false" prefHeight="31.0" prefWidth="236.0" promptText="Numero de cliente" style="-fx-background-color: RGB(222,235,247);" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <GridPane layoutX="210.0" layoutY="-1.0" prefHeight="65.0" prefWidth="872.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="38.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="517.0" minWidth="10.0" prefWidth="320.9999694824219" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="703.3333129882812" minWidth="10.0" prefWidth="196.00003051757812" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="423.3333740234375" minWidth="10.0" prefWidth="321.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#cerrarSesion" opacity="0.15" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" right="-15.0" />
+               </GridPane.margin>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#inicio" opacity="0.15" prefHeight="49.0" prefWidth="53.0" style="-fx-background-color: #000000; -fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="2.0" left="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="btnInicio" mnemonicParsing="false" onAction="#inicio" prefHeight="49.0" prefWidth="49.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 100;" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#perfil" opacity="0.15" prefHeight="32.0" prefWidth="108.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="15.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnPerfil" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#perfil" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Perfil">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="37.0" onMouseClicked="#perfil" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/usuario.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="40.0" onMouseClicked="#inicio" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <image>
+                  <Image url="@../../resources/casa.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnCerrarSesion" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Cerrar sesión" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="31.0" fitWidth="37.0" onMouseClicked="#cerrarSesion" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+               <image>
+                  <Image url="@../../resources/Cerrar.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="3.0" right="105.0" top="5.0" />
+               </GridPane.margin>
+            </ImageView>
+         </children>
+      </GridPane>
+      <GridPane layoutX="232.0" layoutY="86.0" prefHeight="78.0" prefWidth="872.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="16.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.0" minWidth="10.0" prefWidth="437.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.33334350585938" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.33334350585938" minWidth="10.0" prefWidth="36.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.33334350585938" minWidth="0.0" prefWidth="106.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="204.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <JFXTextField fx:id="txtIdBusqueda" alignment="CENTER" labelFloat="true" prefHeight="25.0" prefWidth="160.0" promptText="Buscar por id" GridPane.columnIndex="3" />
+            <ImageView fitHeight="67.0" fitWidth="50.0" onMouseClicked="#buscarCliente" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
+               <image>
+                  <Image url="@../../resources/Buscar.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets right="150.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Button cancelButton="true" mnemonicParsing="false" opacity="0.15" prefHeight="42.0" prefWidth="120.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="5.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="btnGenerarReporte" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="49.0" prefWidth="119.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Generar &#10;Reporte&#10;" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
+               <font>
+                  <Font name="Eras Bold ITC" size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Label contentDisplay="CENTER" prefHeight="38.0" prefWidth="440.0" text="Clientes" textFill="#0070c0">
+               <font>
+                  <Font name="Eras Bold ITC" size="32.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </GridPane>
+      <GridPane layoutX="48.0" layoutY="8.0" prefHeight="782.0" prefWidth="113.0" AnchorPane.leftAnchor="48.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="112.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="168.0" minHeight="10.0" prefHeight="106.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="174.0" minHeight="0.0" prefHeight="109.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="159.0" minHeight="0.0" prefHeight="116.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="156.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#entrarSalas" opacity="0.15" prefHeight="92.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="20.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#entrarReservaciones" opacity="0.15" prefHeight="92.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="20.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#entrarHorarios" opacity="0.15" prefHeight="92.0" prefWidth="93.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="20.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#entrarSucursales" opacity="0.15" prefHeight="92.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="20.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#entrarProductos" opacity="0.15" prefHeight="92.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="20.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#entrarClientes" opacity="0.15" prefHeight="92.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="20.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#entrarEmpleados" opacity="0.15" prefHeight="92.0" prefWidth="97.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="20.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="btnEmpleados" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#entrarEmpleados" prefHeight="88.0" prefWidth="84.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Empleados" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="imgEmpleados" fitHeight="59.0" fitWidth="63.0" onMouseClicked="#entrarEmpleados" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+               <image>
+                  <Image url="@../../resources/empleado.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Button fx:id="btnClientes" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#entrarClientes" prefHeight="88.0" prefWidth="84.0" style="-fx-background-color: #A8E24B; -fx-background-radius: 10;" text="Clientes" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="59.0" fitWidth="65.0" onMouseClicked="#entrarClientes" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../../resources/Cliente.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Button fx:id="btnProductos" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#entrarProductos" prefHeight="88.0" prefWidth="84.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Productos" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <ImageView fitHeight="59.0" fitWidth="65.0" onMouseClicked="#entrarProductos" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@../../resources/Productos.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Button fx:id="btnSucursales" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#entrarSucursales" prefHeight="88.0" prefWidth="84.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Sucursales" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="59.0" fitWidth="65.0" onMouseClicked="#entrarSucursales" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@../../resources/Sucursal3.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Button fx:id="btnHorarios" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#entrarHorarios" prefHeight="88.0" prefWidth="84.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Horarios" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="65.0" fitWidth="65.0" onMouseClicked="#entrarHorarios" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@../../resources/Horarios.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Button fx:id="btnReservaciones" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#entrarReservaciones" prefHeight="88.0" prefWidth="84.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Reservaciones" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="65.0" fitWidth="65.0" onMouseClicked="#entrarReservaciones" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@../../resources/Reservación.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Button fx:id="btnSalas" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#entrarSalas" prefHeight="88.0" prefWidth="84.0" style="-fx-background-color: #CCFFFF; -fx-background-radius: 10;" text="Salas" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="59.0" fitWidth="65.0" onMouseClicked="#entrarSalas" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../resources/Salas.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </ImageView>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

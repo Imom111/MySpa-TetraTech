@@ -1,0 +1,131 @@
+<div class="col-12" id="ventanaEmergente">
+    <div class="text-center titulo_eliminar">
+        <h2>Editar cliente</h2>
+    </div>
+    <div class="col-12">
+        <form>
+            <div class="my-4 px-4">
+                <div class="row">
+                    <div class="col-md-2 d-flex justify-content-between contenedor_editar mb-3">
+                        <label for="txtCodigoCliente" class="form-label">ID:</label>
+                        <input type="number" id="txtCodigoCliente" name="txtCodigoCliente" placeholder="Código del cliente" readonly required style="background-color: RGB(222, 235, 247)">
+                        <input type="hidden" id="txtCodigoPersona" name="txtCodigoPersona" placeholder="Código del cliente" readonly required style="background-color: RGB(222, 235, 247)">
+                        <input type="hidden" id="txtCodigoUsuario" name="txtCodigoUsuario" placeholder="Código del cliente" readonly required style="background-color: RGB(222, 235, 247)">
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-between contenedor_editar mb-3">
+                        <label for="txtNumeroCliente" class="form-label">Número único:</label>
+                        <input type="text" id="txtNumeroCliente" name="txtNumeroCliente" placeholder="Número único del cliente" readonly required style="background-color: RGB(222, 235, 247)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtNombreCliente">Nombre:</label><br>
+                        <input type="text" id="txtNombreCliente" name="txtNombreCliente" maxlength="20" placeholder="Nombre del cliente" autofocus required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtApellidoPCliente">Apellido paterno:</label>
+                        <input type="text" id="txtApellidoPCliente" name="txtApellidoPCliente" maxlength="20" placeholder="Apellido paterno del cliente" autofocus required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtApellidoMCliente">Apellido materno:</label>
+                        <input type="text" id="txtApellidoMCliente" name="txtApellidoMCliente" maxlength="20" placeholder="Apellido materno del cliente" autofocus required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtGeneroCliente">Género:</label><br>
+                        <select style="max-width: 80%;" id="txtGeneroCliente" class="form-select form-select-sm" aria-label=".form-select" required>
+                            <option value="">Indica tu género</option>
+                            <option value="O">Prefiero no decir</option>
+                            <option value="M">Hombre</option>
+                            <option value="F">Mujer</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtTelefonoCliente">Teléfono:</label><br>
+                        <input maxlength="10" type="text" id="txtTelefonoCliente" name="txtTelefonoCliente" minlength="10" maxlength="10" placeholder="Telefono del cliente" autofocus required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtRfcCliente">RFC:</label><br>
+                        <input type="text" id="txtRfcCliente" name="txtRfcCliente" minlength="12" maxlength="13" placeholder="RFC del cliente" autofocus>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtDomicilioCliente">Domicilio:</label><br>
+                        <input type="text" id="txtDomicilioCliente" name="txtDomicilioCliente" placeholder="Domicilio del cliente" autofocus required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtCorreoCliente">Correo:</label><br>
+                        <input type="email" id="txtCorreoCliente" name="txtCorreoCliente" placeholder="Correo del cliente" autofocus required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtUsuarioCliente">Usuario:</label><br>
+                        <input type="text" id="txtUsuarioCliente" name="txtUsuarioCliente" placeholder="Nombre de usuario" autofocus required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtContrasenaCliente">Contraseña:</label><br>
+                        <input type="password" id="txtContrasenaCliente" name="txtContrasenaCliente" placeholder="Contraseña del usuario" autofocus required>
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtRolCliente">Rol:</label><br>
+                        <input type="text" id="txtRolCliente" name="txtRolCliente" placeholder="Rol del usuario" autofocus required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 justify-content-between contenedor_editar">
+                        <label for="txtFotoCliente">Selecciona la imagen:</label><br>
+                        <input type="file" class="form-control-file" id="txtFotoCliente" name="txtFotoCliente" required style="padding: 0" onchange="mostrarImagen();"><br><br>
+                        <input type="hidden" id="txtCodigoImagenCliente" name="txtCodigoImagenCliente">
+                        <button onclick="eliminarImagen();" type="button" class="btn btn-danger">Eliminar imagen</button>
+                    </div>
+                    <div class="col-md-6 justify-content-between contenedor_editar">
+                        <img id="imgFotoCliente" name="imgFotoCliente" alt="Imagen del cliente" height="200" width="200">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 justify-content-between contenedor_editar">
+                        <label for="txtEstatusCliente">Estatus:</label>
+                        <div class="d-flex justify-content-center col-10 container">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    Activo
+                                </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <input type="radio" id="txtEstatusCliente1" name="txtEstatusCliente" value=1 checked required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    Inactivo
+                                </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <input type="radio" id="txtEstatusCliente2" name="txtEstatusCliente" value=2 required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-sm" id="boton_aceptar" onclick="editarCliente();">
+                    <img src="img/paloma.svg" alt="Agregar" class="icono img-fluid">
+                </button>
+                <button type="button" class="btn btn-sm" id="boton_cancelar" onclick="regresar();">
+                    <img src="img/tacha.svg" alt="Cancelar" class="icono img-fluid">
+                </button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>
+
+

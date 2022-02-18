@@ -1,0 +1,61 @@
+<div class="col-12" id="ventanaEmergente">
+    <div class="text-center titulo_eliminar">
+        <h2>Editar sucursal</h2>
+    </div>
+    <div class="col-12">
+        <form>
+            <div class="my-4 px-4">
+                <div class="d-flex justify-content-between contenedor_informar">
+                    <label for="txtCodigoSucursal">ID:</label>
+                    <input type="number" id="txtCodigoSucursal" name="txtCodigoSucursal" placeholder="Código de la sucursal" readonly style="background-color: RGB(222, 235, 247)">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtNombreSucursal">Nombre:</label>
+                    <input type="text" id="txtNombreSucursal" name="txtNombreSucursal" placeholder="Nombre de la sucursal" autofocus required>
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtDomicilioSucursal">Domicilio:</label>
+                    <input type="text" id="txtDomicilioSucursal" name="txtDomicilioSucursal" placeholder="Domicilio de la sucursal" required>
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtLatitudSucursal">Latitud</label>
+                    <input type="number" id="txtLatitudSucursal" name="txtLatitudSucursal" placeholder="Latitud de la sucursal" required step="0.00001">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtLongitudSucursal">Latitud</label>
+                    <input type="number" id="txtLongitudSucursal" name="txtLongitudSucursal" placeholder="Longitud de la sucursal" required step="0.00001">
+                </div>
+                <div class="d-flex justify-content-between contenedor_editar">
+                    <label for="txtEstatusSucursal">Estatus:</label>
+                    <div class="d-flex justify-content-center col-10 container">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                Activo
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <input type="radio" id="txtEstatusSucursal1" name="txtEstatusSucursal" value=1 required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                Inactivo
+                            </div>
+                            <div class="col-12 d-flex justify-content-center">
+                                <input type="radio" id="txtEstatusSucursal2" name="txtEstatusSucursal" value=2 required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-sm" id="boton_aceptar" onclick="editarSucursal();">
+                    <img src="img/paloma.svg" alt="Editar" class="icono img-fluid">
+                </button>
+                <button type="button" class="btn btn-sm" id="boton_cancelar" onclick="regresar();">
+                    <img src="img/tacha.svg" alt="Cancelar" class="icono img-fluid">
+                </button>
+            </div>
+        </form>
+        <br>
+    </div>
+</div>
